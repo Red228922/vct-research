@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Valorant historical match analysis and prediction research prototype",
-  "scripts": { "start": "node index.js", "test": "node test.cjs" },
-  "engines": { "node": ">=20" }
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.cjs && node test-models.cjs && node test-regions.cjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }
