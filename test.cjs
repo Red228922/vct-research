@@ -8,7 +8,7 @@ const { createServer } = require('./index.js');
   const base = `http://127.0.0.1:${server.address().port}`;
   try {
     let r = await fetch(base + '/'); assert.equal(r.status, 200); assert.match(await r.text(), /VCT/);
-    for (const name of ['app.js','data.js','research.js','research-ui.js','validation.js','validation-ui.js','recent-form.js','recent-form-ui.js','regions.js','region-ui.js','style.css']) {
+    for (const name of ['app.js','data.js','research.js','research-ui.js','validation.js','validation-ui.js','recent-form.js','recent-form-ui.js','regions.js','region-ui.js','cross-stage1.js','style.css']) {
       r = await fetch(base + '/' + name); assert.equal(r.status, 200, name); assert((await r.text()).length > 0);
     }
     for (const route of ['/index.js','/package.json','/.env','/%2e%2e%5cindex.js','/missing']) assert.equal((await fetch(base + route)).status, 404, route);
